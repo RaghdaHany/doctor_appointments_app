@@ -6,9 +6,9 @@ class AppAssets {
   static const String logoSVG = '$imagesPath/logo.svg';
   static const String logoTransparentSVG = '$imagesPath/logo_transparent.svg';
 
-  static const String lockSVG = '$imagesPath/lock.svg';
-  static const String emailSVG = '$imagesPath/sms.svg';
-  static const String userSVG = '$imagesPath/user.svg';
+  static const String lockSVG = '$iconsPath/lock.svg';
+  static const String emailSVG = '$iconsPath/sms.svg';
+  static const String userSVG = '$iconsPath/user.svg';
 
 
 }
