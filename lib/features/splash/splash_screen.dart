@@ -1,6 +1,8 @@
 import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_fonts.dart';
+import 'package:doctor_appointments_app/core/extensions/navigation.dart';
+import 'package:doctor_appointments_app/core/routers/routes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
@@ -15,8 +17,17 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
+    // bool isLoggedIn = SharedPref.getUserId().isNotEmpty;
+    // bool isOnboardingShown = SharedPref.getBool(SharedPref.kOnboardingShown);
+    
     Future.delayed(const Duration(seconds: 3), () {
-      
+      // if (isLoggedIn) {
+      // } else {
+      //   if (isOnboardingShown) {
+      //   } else {
+      //   }
+      // }
+      context.pushWithReplacement(Routes.welcome);
     });
     super.initState();
   }

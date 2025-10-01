@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "563526734917",
+    "project_id": "book-appointment-app-d3d27",
+    "storage_bucket": "book-appointment-app-d3d27.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:563526734917:android:c21e2ee4ab38d36a8cff2c",
+        "android_client_info": {
+          "package_name": "com.eraasoft.doctor_appointments_app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyRYXdDVjVp-c22GFt5V4u4c_zd2toLNY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
