@@ -49,7 +49,7 @@ class AuthCubit extends Cubit<AuthState> {
             password: password,
           );
       User? user = userCredential.user;
-      // user?.updateDisplayName(name);
+      user?.updateDisplayName(name);
 
       if (userType == UserType.doctor) {
         await FirestoreServices.createDoctor(

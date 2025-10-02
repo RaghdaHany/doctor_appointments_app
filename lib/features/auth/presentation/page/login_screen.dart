@@ -1,5 +1,3 @@
-import 'dart:developer';
-
 import 'package:doctor_appointments_app/components/buttons/main_button.dart';
 import 'package:doctor_appointments_app/components/dialogs/loading_dialog.dart';
 import 'package:doctor_appointments_app/components/inputs/password_text_form_field.dart';
@@ -41,7 +39,7 @@ class _LoginScreenState extends State<LoginScreen> {
           if (widget.userType == UserType.doctor) {
             context.pushToBase(Routes.doctorRegisterRoute);
           } else {
-            context.pushToBase(Routes.patientHomeRoute);
+            context.pushToBase(Routes.patientMainRoute);
           }
         } else if (state is AuthErrorState) {
           context.pop();

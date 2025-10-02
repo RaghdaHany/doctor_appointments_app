@@ -44,7 +44,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
          if (widget.userType == UserType.doctor) {
             context.pushToBase(Routes.doctorRegisterRoute);
           } else {
-            context.pushToBase(Routes.patientHomeRoute);
+            context.pushToBase(Routes.patientMainRoute);
           }
         } else if (state is AuthErrorState) {
           context.pop();

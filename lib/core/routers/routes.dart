@@ -4,7 +4,8 @@ import 'package:doctor_appointments_app/features/auth/presentation/page/doctor_r
 import 'package:doctor_appointments_app/features/auth/presentation/page/login_screen.dart';
 import 'package:doctor_appointments_app/features/auth/presentation/page/registration_screen.dart';
 import 'package:doctor_appointments_app/features/doctor/home/doctor_home_screen.dart';
-import 'package:doctor_appointments_app/features/patient/home/patient_home_screen.dart';
+import 'package:doctor_appointments_app/features/patient/doctor_profile/doctor_profile_data_screen.dart';
+import 'package:doctor_appointments_app/features/patient/patient_main_screen.dart';
 import 'package:doctor_appointments_app/features/splash/splash_screen.dart';
 import 'package:doctor_appointments_app/features/welcome/welcome_screen.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -16,9 +17,9 @@ class Routes {
   static const String loginRoute = '/login';
   static const String registerRoute = '/register';
   static const String doctorRegisterRoute = '/doctorRegistration';
-  static const String patientHomeRoute = '/patientHome';
+  static const String patientMainRoute = '/patientMain';
   static const String doctorHomeRoute = '/doctorHome';
-
+  static const String doctorProfileRoute = '/doctorProfile';
 
   static final routers = GoRouter(
     routes: [
@@ -53,9 +54,18 @@ class Routes {
             ),
       ),
 
-      GoRoute(path: patientHomeRoute, builder: (context, state) => PatientHomeScreen()),
-      GoRoute(path: doctorHomeRoute, builder: (context, state) => DoctorHomeScreen()),
-
+      GoRoute(
+        path: patientMainRoute,
+        builder: (context, state) => PatientMainScreen(),
+      ),
+      GoRoute(
+        path: doctorHomeRoute,
+        builder: (context, state) => DoctorHomeScreen(),
+      ),
+      GoRoute(
+        path: doctorProfileRoute,
+        builder: (context, state) => DoctorProfileDataScreen(),
+      ),
     ],
   );
 }
