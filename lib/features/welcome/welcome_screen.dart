@@ -1,6 +1,5 @@
 import 'package:doctor_appointments_app/components/buttons/main_button.dart';
 import 'package:doctor_appointments_app/core/constants/app_assets.dart';
-import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
 import 'package:doctor_appointments_app/core/extensions/navigation.dart';
 import 'package:doctor_appointments_app/core/routers/routes.dart';

@@ -22,7 +22,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     Future.delayed(const Duration(seconds: 3), () {
       if (isLoggedIn) {
-        context.pushWithReplacement(Routes.patientHomeRoute);
+        context.pushWithReplacement(Routes.patientMainRoute);
       } else {
         context.pushWithReplacement(Routes.welcome);
       }

@@ -9,6 +9,8 @@ class AppColors {
   static const blueColor = Color(0xFF1E65f2);
 
   static const secondColor = Color(0xFFa4cfc3);
+  static const borderColor = Color(0xFFE8ECF4);
+  static const skyBlueColor = Color(0xFFdfe8f7);
 
 
 
