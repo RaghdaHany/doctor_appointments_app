@@ -7,10 +7,11 @@ class AppointmentModel {
   String? patientPhone;
   String? description;
   String? doctorName;
+  String? doctorImage;
   String? location;
   DateTime? date;
   bool? isComplete;
-  double? rating;
+  String? age;
 
   AppointmentModel({
     this.patientID,
@@ -19,10 +20,11 @@ class AppointmentModel {
     this.patientPhone,
     this.description,
     this.doctorName,
+    this.doctorImage,
     this.location,
     this.date,
     this.isComplete,
-    this.rating,
+    this.age,
   });
 
   factory AppointmentModel.fromJson(Map<String, dynamic> json) {
@@ -33,10 +35,11 @@ class AppointmentModel {
       patientPhone: json['patientPhone'],
       description: json['description'],
       doctorName: json['doctor'],
+      doctorImage: json['doctorImage'],
       location: json['location'],
       date: (json['date'] as Timestamp).toDate(),
       isComplete: json['isComplete'],
-      rating: json['rating'],
+      age: json['age'],
     );
   }
 
@@ -47,9 +50,11 @@ class AppointmentModel {
     'patientPhone': patientPhone,
     'description': description,
     'doctor': doctorName,
+    'doctorImage': doctorImage,
+
     'location': location,
     'date': date,
     'isComplete': isComplete,
-    'rating': rating,
+    'age': age,
   };
 }
