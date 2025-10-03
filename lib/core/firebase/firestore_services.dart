@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:doctor_appointments_app/core/services/shared_pref.dart';
 import 'package:doctor_appointments_app/features/auth/data/models/doctor_data.dart';
 import 'package:doctor_appointments_app/features/auth/data/models/patient_data.dart';
 
@@ -27,5 +28,13 @@ class FirestoreServices {
 
   static Future<void> updatePatient(PatientData model) async {
     await _patientsCollection.doc(model.uid).update(model.toUpdateData());
+  }
+
+    static Future<QuerySnapshot<Object?>> getDoctorData() async {
+    return _doctorsCollection.get();
+  }
+
+    static Future<DocumentSnapshot<Object?>> getPatientProfileById() async {
+    return _patientsCollection.doc(SharedPref.getUserToken()).get();
   }
 }

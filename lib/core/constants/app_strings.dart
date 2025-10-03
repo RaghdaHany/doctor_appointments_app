@@ -64,4 +64,20 @@ class AppStrings {
   static final String locationBannerTextOne = 'Find us easily!';
   static final String locationBannerTextTwo = 'Tap to view clinic location.';
   static final String locationBannerTextThree = 'View Location';
+
+  static final String noDoctorAvailable = 'No Doctor Available';
+
+  static final String doctorDetails = 'Doctor Details';
+
+  static final String aboutMe = 'About Me';
+
+  static final String workingHoursText = 'Working Hours';
+
+  static final String contactingInfo = 'Contacting Info';
+    static final String bookNow = 'Book Now';
+
+  static final String profile = 'My Profile';
+
+  static final String editProfile = 'Edit Profile';
+
 }

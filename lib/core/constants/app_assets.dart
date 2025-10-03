@@ -20,4 +20,10 @@ class AppAssets {
   static const String homeIconSVG = '$iconsPath/home_icon.svg';
   static const String profileIconSVG = '$iconsPath/profile_icon.svg';
   static const String calenderIconSVG = '$iconsPath/calendar_icon.svg';
+  static const String noSearchSVG = '$iconsPath/calendar_icon.svg';
+
+  static const String register = 'Register';
+
+  static final String saveEdits = 'Save Edits';
+
 }
