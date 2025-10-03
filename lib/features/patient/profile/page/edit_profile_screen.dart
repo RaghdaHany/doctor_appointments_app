@@ -1,6 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:doctor_appointments_app/components/buttons/main_button.dart';
-import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
 import 'package:doctor_appointments_app/core/utils/text_styles.dart';
@@ -111,7 +110,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                                   ),
                                   const SizedBox(height: 20),
                                   MainButton(
-                                    text: AppAssets.saveEdits,
+                                    text: AppStrings.saveEdits,
                                     onPressed: () {
                                       if (form.currentState!.validate()) {
                                         updateData(value[index], con.text);

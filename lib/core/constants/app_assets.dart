@@ -11,6 +11,8 @@ class AppAssets {
   static const String bookingBannerImage = '$imagesPath/introduction_image_two.jpg';
   static const String contactingBannerImage = '$imagesPath/introduction_image_three.jpg';
   static const String locationBannerImage = '$imagesPath/introduction_image_four.jpg';
+    static const String noUpcomingScheduleImage = '$imagesPath/no_schedule_image.jpg';
+
 
   static const String lockSVG = '$iconsPath/lock.svg';
   static const String emailSVG = '$iconsPath/sms.svg';
@@ -21,9 +23,4 @@ class AppAssets {
   static const String profileIconSVG = '$iconsPath/profile_icon.svg';
   static const String calenderIconSVG = '$iconsPath/calendar_icon.svg';
   static const String noSearchSVG = '$iconsPath/calendar_icon.svg';
-
-  static const String register = 'Register';
-
-  static final String saveEdits = 'Save Edits';
-
 }

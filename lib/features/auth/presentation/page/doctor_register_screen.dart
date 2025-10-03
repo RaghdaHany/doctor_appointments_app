@@ -391,53 +391,39 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                     bio: _bio.text,
                   ),
                 );
-              } 
+              }
             },
-            text: AppAssets.register,
+            text: AppStrings.register,
           ),
         ),
       ),
     );
   }
 
-  Future<void> showStartTimePicker() async {
-    final MaterialLocalizations localizations = MaterialLocalizations.of(
-      context,
-    );
-
+   Future<void> showStartTimePicker() async {
     final startTimePicked = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
     );
 
     if (startTimePicked != null) {
-      final String formattedStartTime = localizations.formatTimeOfDay(
-        startTimePicked,
-        alwaysUse24HourFormat: false,
-      );
       setState(() {
-        _startTime = formattedStartTime.toString();
+        _startTime = startTimePicked.hour.toString();
       });
     }
   }
 
   Future<void> showEndTimePicker() async {
-    final MaterialLocalizations localizations = MaterialLocalizations.of(
-      context,
-    );
-
     final endTimePicked = await showTimePicker(
       context: context,
-      initialTime: TimeOfDay.now(),
+      initialTime: TimeOfDay.fromDateTime(
+        DateTime.now().add(const Duration(minutes: 15)),
+      ),
     );
 
     if (endTimePicked != null) {
-      final String formattedEndTime = localizations.formatTimeOfDay(
-        endTimePicked,
-        alwaysUse24HourFormat: false,
-      );
       setState(() {
-        _endTime = formattedEndTime.toString();
+        _endTime = endTimePicked.hour.toString();
       });
     }
   }

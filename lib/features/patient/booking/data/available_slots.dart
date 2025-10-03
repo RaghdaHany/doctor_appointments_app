@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 List<int> getAvailableAppointments(
   DateTime selectedDate,
   String start,
@@ -5,6 +7,9 @@ List<int> getAvailableAppointments(
 ) {
   int startHour = int.parse(start);
   int endHour = int.parse(end);
+
+  log(startHour.toString());
+  log(endHour.toString());
 
   List<int> availableHours = [];
 

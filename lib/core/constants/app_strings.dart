@@ -43,20 +43,13 @@ class AppStrings {
   static final String workingHours = 'Working Hours From';
   static final String to = 'To';
   static final String phone1 = 'Phone Number';
-
   static final String phoneError = 'Please Enter Your Phone Number';
-
   static final String phone2 = 'Another Phone Number (Optional)';
-
   static final String noUpcomingAppointments = 'No Upcoming Appointments';
-
   static final String doctorBannerTextOne = 'Expert Care Awaits ..';
   static final String doctorBannerTextTwo = 'Explore Doctor\'s Profile.';
-
   static final String bookingBannerTextOne = 'Ready for the care you deserve?';
-
   static final String bookingBannerTextTwo = 'Click here!';
-
   static final String bookingBannerTextThree = 'to book your appointment';
   static final String contactingBannerTextOne = 'Have a question?';
   static final String contactingBannerTextTwo = 'Chat with us on WhatsApp!';
@@ -64,20 +57,51 @@ class AppStrings {
   static final String locationBannerTextOne = 'Find us easily!';
   static final String locationBannerTextTwo = 'Tap to view clinic location.';
   static final String locationBannerTextThree = 'View Location';
-
   static final String noDoctorAvailable = 'No Doctor Available';
-
   static final String doctorDetails = 'Doctor Details';
-
   static final String aboutMe = 'About Me';
-
   static final String workingHoursText = 'Working Hours';
-
   static final String contactingInfo = 'Contacting Info';
-    static final String bookNow = 'Book Now';
-
+  static final String bookNow = 'Book Now';
+  static final String bookAppointment = 'Book Appointment';
   static final String profile = 'My Profile';
-
   static final String editProfile = 'Edit Profile';
+  static final String patientName = 'Patient Name';
+  static final String enterPatientName = 'Please Enter Patient Name';
+  static final String patientAge = 'Patient Age';
+  static final String enterPatientAge = 'Please Enter Patient Age';
+  static final String patientPhone = 'Patient Phone';
+  static final String enterPatientPhone = 'Please Enter Patient Phone';
+  static final String bookingDate = 'Booking Date';
+  static final String enterDate = 'Please Enter Booking Date';
+  static final String enterBookingDate = 'Enter Booking Date';
+  static final String confirmBooking = 'Confirm Booking';
+  static final String appointmentTime = 'Appointment Time';
+
+  static final String appointmentBooked = 'Appointment is Booked Successfully';
+
+  static final String ok = 'Ok';
+
+  static final String deleteAppointment = 'Delete Appointment';
+
+  static final String sureDelete = 'Are you sure yo want to delete?';
+
+  static final String no = 'No';
+
+  static final String yes = 'Yes';
+
+  static final String appointments = 'Appointments';
+  static final String register = 'Register';
+
+  static final String saveEdits = 'Save Edits';
+
+  static String noUpcomingAppointment = 'No Upcoming Appointment';
+
+  static final String today = 'Today';
+
+  static String welcome = 'Welcome!';
+  static String homeTextOne = 'Book your appointment';
+    static String homeTextTwo = 'in just a few clicks';
+
 
 }
