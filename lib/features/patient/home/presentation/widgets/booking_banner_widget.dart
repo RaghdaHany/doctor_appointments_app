@@ -1,17 +1,21 @@
 import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
+import 'package:doctor_appointments_app/core/extensions/navigation.dart';
+import 'package:doctor_appointments_app/core/routers/routes.dart';
 import 'package:doctor_appointments_app/core/utils/text_styles.dart';
+import 'package:doctor_appointments_app/features/auth/data/models/doctor_data.dart';
 import 'package:flutter/material.dart';
 
 class BookingBannerWidget extends StatelessWidget {
-  const BookingBannerWidget({super.key});
+  const BookingBannerWidget({super.key, required this.doctorData});
 
+  final DoctorData doctorData;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-
+        context.pushWithExtra(Routes.bookAppointmentRoute, extra: doctorData);
       },
 
       child: Container(
@@ -47,17 +51,26 @@ class BookingBannerWidget extends StatelessWidget {
                     children: [
                       Text(
                         AppStrings.bookingBannerTextOne,
-                        style: TextStyles.getBody(color: AppColors.primaryColor , fontSize: 15),
-                      ),
-      
-                       Text(
-                        AppStrings.bookingBannerTextTwo,
-                        style: TextStyles.getHeadLine1(color: AppColors.primaryColor, fontSize: 15),
+                        style: TextStyles.getBody(
+                          color: AppColors.primaryColor,
+                          fontSize: 15,
+                        ),
                       ),
 
-                       Text(
+                      Text(
+                        AppStrings.bookingBannerTextTwo,
+                        style: TextStyles.getHeadLine1(
+                          color: AppColors.primaryColor,
+                          fontSize: 15,
+                        ),
+                      ),
+
+                      Text(
                         AppStrings.bookingBannerTextThree,
-                        style: TextStyles.getBody(color: AppColors.primaryColor, fontSize: 15),
+                        style: TextStyles.getBody(
+                          color: AppColors.primaryColor,
+                          fontSize: 15,
+                        ),
                       ),
                     ],
                   ),

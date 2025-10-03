@@ -2,7 +2,7 @@ import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/features/patient/appointments/patient_appointments_screen.dart';
 import 'package:doctor_appointments_app/features/patient/home/presentation/page/patient_home_screen.dart';
-import 'package:doctor_appointments_app/features/patient/profile/patient_profile_screen.dart.dart';
+import 'package:doctor_appointments_app/features/patient/profile/page/patient_profile_screen.dart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

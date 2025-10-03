@@ -1,19 +1,21 @@
 import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
+import 'package:doctor_appointments_app/core/extensions/navigation.dart';
 import 'package:doctor_appointments_app/core/routers/routes.dart';
 import 'package:doctor_appointments_app/core/utils/text_styles.dart';
+import 'package:doctor_appointments_app/features/auth/data/models/doctor_data.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 
 class DoctorBannerWidget extends StatelessWidget {
-  const DoctorBannerWidget({super.key});
+  const DoctorBannerWidget({super.key , required this.doctorData});
+  final DoctorData doctorData;
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.pushReplacement(Routes.doctorProfileRoute);
+        context.pushWithExtra(Routes.doctorProfileRoute , extra: doctorData);
       },
       child: Container(
         width: double.infinity,

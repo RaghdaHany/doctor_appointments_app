@@ -46,7 +46,7 @@ class TextStyles {
     return TextStyle(
       fontSize: fontSize ?? 16,
       fontWeight: fontWeight ?? FontWeight.normal,
-      color: color ?? AppColors.greyColor,
+      color: color ?? AppColors.darkGreyColor,
     );
   }
 

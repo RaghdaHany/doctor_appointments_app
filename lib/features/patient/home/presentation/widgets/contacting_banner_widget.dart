@@ -3,12 +3,14 @@ import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
 import 'package:doctor_appointments_app/core/services/whatsapp_launcher.dart';
 import 'package:doctor_appointments_app/core/utils/text_styles.dart';
+import 'package:doctor_appointments_app/features/auth/data/models/doctor_data.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 class ContactingBannerWidget extends StatelessWidget {
-  const ContactingBannerWidget({super.key});
+  const ContactingBannerWidget({super.key ,required this.doctorData});
 
+final DoctorData doctorData;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -58,7 +60,7 @@ class ContactingBannerWidget extends StatelessWidget {
 
                       TextButton(
                         onPressed: () {
-                          sendWhatsAppMessage('01282177436', 'Is Anyone available for chat?');
+                          sendWhatsAppMessage(doctorData.phone1!, 'Is Anyone available for chat?');
                         },
                         style: TextButton.styleFrom(
                           foregroundColor: AppColors.primaryColor,  //text color

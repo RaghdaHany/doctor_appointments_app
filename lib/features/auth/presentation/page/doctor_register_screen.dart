@@ -103,11 +103,9 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                         children: [
                           CircleAvatar(
                             radius: 80,
-                            backgroundColor: AppColors.secondColor.withValues(
-                              alpha: .5,
-                            ),
+                            backgroundColor: AppColors.primaryColor,
                             child: CircleAvatar(
-                              radius: 70,
+                              radius: 75,
                               backgroundImage:
                                   (_imagePath != null)
                                       ? FileImage(File(_imagePath!))
@@ -116,15 +114,19 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                                       ),
                             ),
                           ),
-                          GestureDetector(
-                            onTap: () async {
-                              await _pickImage();
-                            },
-                            child: CircleAvatar(
-                              radius: 15,
-                              backgroundColor:
-                                  Theme.of(context).scaffoldBackgroundColor,
-                              child: SvgPicture.asset(AppAssets.editSVG),
+                          Positioned(
+                            bottom: 10,
+                            right: 10,
+                            child: GestureDetector(
+                              onTap: () async {
+                                await _pickImage();
+                              },
+                              child: Container(
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: SvgPicture.asset(AppAssets.editSVG),
+                              ),
                             ),
                           ),
                         ],
@@ -149,7 +151,6 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                           vertical: 5,
                         ),
                         decoration: BoxDecoration(
-                          color: AppColors.secondColor.withValues(alpha: .5),
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: DropdownButton(
@@ -374,9 +375,8 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
           child: MainButton(
             onPressed: () async {
               if (_formKey.currentState!.validate()) {
-                if(file != null){
-                profileUrl = await uploadImageToCloudinary(File(file!.path));
-
+                if (file != null) {
+                  profileUrl = await uploadImageToCloudinary(File(file!.path));
                 }
                 context.read<AuthCubit>().registerDoctorData(
                   DoctorData(
@@ -391,15 +391,9 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                     bio: _bio.text,
                   ),
                 );
-              } else {
-                // ScaffoldMessenger.of(context).showSnackBar(
-                //   const SnackBar(
-                //     content: Text('من فضلك قم بتحميل صورتك الشخصية'),
-                //   ),
-                // );
-              }
+              } 
             },
-            text: "التسجيل",
+            text: AppAssets.register,
           ),
         ),
       ),
