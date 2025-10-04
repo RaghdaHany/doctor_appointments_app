@@ -3,6 +3,7 @@ import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_strings.dart';
 import 'package:doctor_appointments_app/core/extensions/navigation.dart';
 import 'package:doctor_appointments_app/core/routers/routes.dart';
+import 'package:doctor_appointments_app/core/services/shared_pref.dart';
 import 'package:doctor_appointments_app/core/utils/text_styles.dart';
 import 'package:doctor_appointments_app/features/auth/data/models/user_type.dart';
 import 'package:flutter/material.dart';
@@ -55,6 +56,8 @@ class WelcomeScreen extends StatelessWidget {
                       Routes.loginRoute,
                       extra: UserType.doctor,
                     );
+
+                    SharedPref.setUserType(UserType.doctor.toString());
                   },
                 ),
 
@@ -67,6 +70,8 @@ class WelcomeScreen extends StatelessWidget {
                       Routes.loginRoute,
                       extra: UserType.patient,
                     );
+
+                  SharedPref.setUserType(UserType.doctor.toString());
                   },
                 ),
               ],

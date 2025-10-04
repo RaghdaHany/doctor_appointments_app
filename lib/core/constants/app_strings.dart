@@ -77,31 +77,21 @@ class AppStrings {
   static final String enterBookingDate = 'Enter Booking Date';
   static final String confirmBooking = 'Confirm Booking';
   static final String appointmentTime = 'Appointment Time';
-
   static final String appointmentBooked = 'Appointment is Booked Successfully';
-
   static final String ok = 'Ok';
-
   static final String deleteAppointment = 'Delete Appointment';
-
   static final String sureDelete = 'Are you sure yo want to delete?';
-
   static final String no = 'No';
-
   static final String yes = 'Yes';
-
   static final String appointments = 'Appointments';
   static final String register = 'Register';
-
   static final String saveEdits = 'Save Edits';
-
   static String noUpcomingAppointment = 'No Upcoming Appointment';
-
   static final String today = 'Today';
-
-  static String welcome = 'Welcome!';
-  static String homeTextOne = 'Book your appointment';
-    static String homeTextTwo = 'in just a few clicks';
-
-
+  static final String welcome = 'Welcome!';
+  static final String homeTextOne = 'Book your appointment';
+  static final String homeTextTwo = 'in just a few clicks';
+  static final String contactAdmin = 'Please Contact Your Admin For Registration';
+  static final String enterCost = 'Please Enter Service Cost';
+  static final String cost = 'Cost';
 }

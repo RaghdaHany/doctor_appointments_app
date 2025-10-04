@@ -13,7 +13,7 @@ class DoctorData {
   String? address;
   String? uid;
   Float? rating;
-  Int? cost;
+  String? cost;
 
   DoctorData({
     this.name,
