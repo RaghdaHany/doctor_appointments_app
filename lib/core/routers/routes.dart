@@ -4,7 +4,9 @@ import 'package:doctor_appointments_app/features/auth/presentation/cubit/auth_cu
 import 'package:doctor_appointments_app/features/auth/presentation/page/doctor_register_screen.dart';
 import 'package:doctor_appointments_app/features/auth/presentation/page/login_screen.dart';
 import 'package:doctor_appointments_app/features/auth/presentation/page/registration_screen.dart';
-import 'package:doctor_appointments_app/features/doctor/home/doctor_home_screen.dart';
+import 'package:doctor_appointments_app/features/doctor/home/page/doctor_home_screen.dart';
+import 'package:doctor_appointments_app/features/doctor/profile/page/doctor_profile_screen.dart.dart';
+import 'package:doctor_appointments_app/features/doctor/profile/page/edit_profile_doctor_screen.dart';
 import 'package:doctor_appointments_app/features/patient/booking/presentation/booking_appointment_screen.dart';
 import 'package:doctor_appointments_app/features/patient/doctor_profile/page/doctor_profile_data_screen.dart';
 import 'package:doctor_appointments_app/features/patient/main/patient_main_screen.dart';
@@ -25,8 +27,8 @@ class Routes {
   static const String doctorProfileRoute = '/doctorProfile';
   static const String bookAppointmentRoute = '/bookAppointment';
   static const String editProfileRoute = '/editProfile';
-
-
+  static const String editDoctorProfileRoute = '/editDoctorProfile';
+  static const String settingDoctorRoute = '/settingDoctor';
 
   static final routers = GoRouter(
     routes: [
@@ -87,6 +89,16 @@ class Routes {
       GoRoute(
         path: editProfileRoute,
         builder: (context, state) => EditProfileScreen(),
+      ),
+
+      GoRoute(
+        path: editDoctorProfileRoute,
+        builder: (context, state) => EditDoctorProfileScreen(),
+      ),
+
+      GoRoute(
+        path: settingDoctorRoute,
+        builder: (context, state) => DoctorProfileScreen(),
       ),
     ],
   );

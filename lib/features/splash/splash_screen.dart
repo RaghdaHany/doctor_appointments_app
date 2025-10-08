@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:doctor_appointments_app/core/constants/app_assets.dart';
 import 'package:doctor_appointments_app/core/constants/app_colors.dart';
 import 'package:doctor_appointments_app/core/constants/app_fonts.dart';
@@ -21,8 +23,18 @@ class _SplashScreenState extends State<SplashScreen> {
     bool isLoggedIn = SharedPref.getUserToken().isNotEmpty;
 
     Future.delayed(const Duration(seconds: 3), () {
+      log(SharedPref.getUserType());
+
       if (isLoggedIn) {
-        context.pushWithReplacement(Routes.patientMainRoute);
+        if (SharedPref.getUserType() == 'doctor') {
+          if (SharedPref.getDoctorRegister() == 'true') {
+            context.pushWithReplacement(Routes.doctorHomeRoute);
+          } else {
+            context.pushWithReplacement(Routes.doctorRegisterRoute);
+          }
+        } else {
+          context.pushWithReplacement(Routes.patientMainRoute);
+        }
       } else {
         context.pushWithReplacement(Routes.welcome);
       }

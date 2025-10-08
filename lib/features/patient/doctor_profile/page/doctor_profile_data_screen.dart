@@ -154,7 +154,7 @@ class _DoctorProfileDataScreenState extends State<DoctorProfileDataScreen> {
                   Gap(10),
 
                   Text(
-                    '${widget.doctorData.openHour} - ${widget.doctorData.closeHour}',
+                    '${widget.doctorData.openHour}:00 - ${widget.doctorData.closeHour}:00',
                     style: TextStyles.getBody(),
                   ),
                 ],

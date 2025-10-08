@@ -5,6 +5,9 @@ class SharedPref {
   static late SharedPreferences pref;
   static const String kToken = 'kToken';
   static const String kUserInfo = 'kUserInfo';
+  static const String userType = 'userType';
+  static const String firstRegister = 'firstRegister';
+
 
   SharedPref._internal();
 
@@ -24,21 +27,21 @@ class SharedPref {
     return getString(kToken);
   }
 
-  // static Future<void> setUserInfo(User value) async {
-  //   var userModelToJson = value.toJson();
-  //   String userJsonToString = json.encode(userModelToJson);
-  //   await setString(kUserInfo, userJsonToString);
-  // }
+  static Future<void> setUserType(String value) async {
+    setString(userType, value);
+  }
 
-  // static User? getUserInfo() {
-  //   var userJsonToString = getString(kUserInfo);
-  //   if (userJsonToString.isEmpty || userJsonToString == '') {
-  //     return null;
-  //   }
-  //   var userStringToJson = json.decode(userJsonToString);
-  //   var userJsonToModel = User.fromJson(userStringToJson);
-  //   return userJsonToModel;
-  // }
+  static String getUserType() {
+    return getString(userType);
+  }
+
+   static Future<void> setDoctorRegister(String value) async {
+    setString(firstRegister, value);
+  }
+
+  static String getDoctorRegister() {
+    return getString(firstRegister);
+  }
 
   static Future<void> setString(String key, String value) async {
     await pref.setString(key, value);

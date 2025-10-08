@@ -38,7 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
         if (state is AuthSuccessState) {
           if (widget.userType == UserType.doctor) {
             context.pushToBase(Routes.doctorRegisterRoute);
-          } else {
+          } else {       
             context.pushToBase(Routes.patientMainRoute);
           }
         } else if (state is AuthErrorState) {
@@ -131,6 +131,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {
                         context.read<AuthCubit>().login(
+                          widget.userType,
                           _emailController.text,
                           _passwordController.text,
                         );
@@ -141,14 +142,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
                   Gap(30),
 
-                  TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      AppStrings.forgetPassword,
-                      style: TextStyles.getBody(color: AppColors.blueColor),
-                    ),
-                  ),
-
+                  // TextButton(
+                  //   onPressed: () {},
+                  //   child: Text(
+                  //     AppStrings.forgetPassword,
+                  //     style: TextStyles.getBody(color: AppColors.blueColor),
+                  //   ),
+                  // ),
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: Row(
@@ -162,11 +162,16 @@ class _LoginScreenState extends State<LoginScreen> {
                         ),
                         TextButton(
                           onPressed: () {
-                            context.pushWithReplacement(
-                              Routes.registerRoute,
-                              extra: widget.userType,
-                            );
+                            if (widget.userType == UserType.doctor) {
+                              showMainDialog(context, AppStrings.contactAdmin);
+                            } else {
+                              context.pushWithReplacement(
+                                Routes.registerRoute,
+                                extra: widget.userType,
+                              );
+                            }
                           },
+
                           child: Text(
                             AppStrings.signUp,
                             style: TextStyles.getBody(

@@ -11,13 +11,23 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthStateInitial());
 
-  Future<void> login(String emailAddress, String password) async {
+  Future<void> login(
+    UserType userType,
+    String emailAddress,
+    String password,
+  ) async {
     emit(AuthLoadingState());
     try {
       final credential = await FirebaseAuth.instance.signInWithEmailAndPassword(
         email: emailAddress,
         password: password,
       );
+
+      if (userType == UserType.doctor) {
+        SharedPref.setUserType('doctor');
+      } else if (userType == UserType.patient) {
+        SharedPref.setUserType('patient');
+      }
 
       User? user = credential.user;
 
@@ -60,6 +70,7 @@ class AuthCubit extends Cubit<AuthState> {
             phone1: phoneNumber,
           ),
         );
+        SharedPref.setUserType('doctor');
       } else {
         await FirestoreServices.createPatient(
           PatientData(
@@ -69,6 +80,7 @@ class AuthCubit extends Cubit<AuthState> {
             phone: phoneNumber,
           ),
         );
+        SharedPref.setUserType('patient');
       }
 
       SharedPref.setUserToken(user?.uid ?? '');
@@ -87,6 +99,8 @@ class AuthCubit extends Cubit<AuthState> {
   }
 
   Future<void> registerDoctorData(DoctorData model) async {
+    SharedPref.setDoctorRegister('true');
+
     emit(AuthLoadingState());
     try {
       await FirestoreServices.updateDoctor(model);

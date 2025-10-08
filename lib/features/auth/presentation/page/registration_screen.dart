@@ -38,10 +38,10 @@ class _RegisterScreenState extends State<RegisterScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<AuthCubit,AuthState>(
+    return BlocListener<AuthCubit, AuthState>(
       listener: (context, state) {
         if (state is AuthSuccessState) {
-         if (widget.userType == UserType.doctor) {
+          if (widget.userType == UserType.doctor) {
             context.pushToBase(Routes.doctorRegisterRoute);
           } else {
             context.pushToBase(Routes.patientMainRoute);
@@ -71,12 +71,18 @@ class _RegisterScreenState extends State<RegisterScreen> {
                   Gap(5),
                   Text(AppStrings.appName, style: TextStyles.getHeadLine2()),
                   Gap(30),
-                  Text(AppStrings.createAccount, style: TextStyles.getHeadLine1()),
+                  Text(
+                    AppStrings.createAccount,
+                    style: TextStyles.getHeadLine1(),
+                  ),
                   Gap(5),
-                      
-                  Text(AppStrings.registrationMsgText, style: TextStyles.getBody()),
+
+                  Text(
+                    AppStrings.registrationMsgText,
+                    style: TextStyles.getBody(),
+                  ),
                   Gap(60),
-                      
+
                   StringTextFormField(
                     keyboardType: TextInputType.name,
                     controller: _nameController,
@@ -88,10 +94,9 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     validator: (value) {
                       if (value!.isEmpty) return AppStrings.emptyNameValidation;
                       return null;
-                      
                     },
                   ),
-                      
+
                   Gap(15),
                   StringTextFormField(
                     keyboardType: TextInputType.emailAddress,
@@ -111,7 +116,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }
                     },
                   ),
-                      
+
                   Gap(15),
                   PasswordTextFormField(
                     keyboardType: TextInputType.visiblePassword,
@@ -144,13 +149,17 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     },
                   ),
                   Gap(15),
-                   PhoneTextFormField(
+                  PhoneTextFormField(
                     keyboardType: TextInputType.phone,
                     controller: _phoneNumberController,
                     hintText: AppStrings.phoneHintText,
                     prefixIcon: IconButton(
                       onPressed: null,
-                      icon: Icon(Icons.phone_in_talk_outlined , color: AppColors.darkGreyColor, size: 20,),
+                      icon: Icon(
+                        Icons.phone_in_talk_outlined,
+                        color: AppColors.darkGreyColor,
+                        size: 20,
+                      ),
                     ),
                     validator: (value) {
                       if (value!.isEmpty) {
@@ -162,24 +171,25 @@ class _RegisterScreenState extends State<RegisterScreen> {
                       }
                     },
                   ),
-                      
-                  const Gap(20),
-                  MainButton(onPressed: () async {
-                     if (_formKey.currentState!.validate()) {
-                            context.read<AuthCubit>().register(
-                              widget.userType,
-                              _nameController.text,
-                              _emailController.text,
-                              _passwordController.text,
-                              _phoneNumberController.text,
 
-                            );
-                          }
-                        }, text: (AppStrings.signUp)),
-                      
+                  const Gap(20),
+                  MainButton(
+                    onPressed: () async {
+                      if (_formKey.currentState!.validate()) {
+                        context.read<AuthCubit>().register(
+                          widget.userType,
+                          _nameController.text,
+                          _emailController.text,
+                          _passwordController.text,
+                          _phoneNumberController.text,
+                        );
+                      }
+                    },
+                    text: (AppStrings.signUp),
+                  ),
+
                   Gap(30),
-                      
-                 
+
                   Padding(
                     padding: const EdgeInsets.only(top: 15),
                     child: Row(

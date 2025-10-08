@@ -41,6 +41,10 @@ class FirestoreServices {
     return _patientsCollection.doc(SharedPref.getUserToken()).get();
   }
 
+   static Future<DocumentSnapshot<Object?>> getDoctorProfileById() async {
+    return _doctorsCollection.doc(SharedPref.getUserToken()).get();
+  }
+
   static Future<void> createAppointment(AppointmentModel model) async {
     await _appointmentsCollection.doc().set(model.toJson());
   }

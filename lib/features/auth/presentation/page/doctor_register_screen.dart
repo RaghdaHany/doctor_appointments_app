@@ -38,6 +38,7 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
   final TextEditingController _address = TextEditingController();
   final TextEditingController _phone1 = TextEditingController();
   final TextEditingController _phone2 = TextEditingController();
+  final TextEditingController _costController = TextEditingController();
   String _specialization = specialization[0];
 
   late String _startTime = DateFormat(
@@ -231,6 +232,34 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                           }
                         },
                       ),
+                      Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Row(
+                          children: [
+                            Text(
+                              AppStrings.cost,
+                              style: TextStyles.getBody(
+                                color: AppColors.primaryColor,
+                              ),
+                            ),
+                          ],
+                        ),
+                      ),
+
+                      PhoneTextFormField(
+                        keyboardType: TextInputType.number,
+                        controller: _costController,
+                        hintText: '250 EGP',
+
+                        validator: (value) {
+                          if (value!.isEmpty) {
+                            return AppStrings.enterCost;
+                          } else {
+                            return null;
+                          }
+                        },
+                      ),
+
                       Row(
                         children: [
                           Expanded(
@@ -389,6 +418,7 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
                     openHour: _startTime,
                     closeHour: _endTime,
                     bio: _bio.text,
+                    cost: _costController.text,
                   ),
                 );
               }
@@ -400,7 +430,7 @@ class _DoctorRegistrationScreenState extends State<DoctorRegistrationScreen> {
     );
   }
 
-   Future<void> showStartTimePicker() async {
+  Future<void> showStartTimePicker() async {
     final startTimePicked = await showTimePicker(
       context: context,
       initialTime: TimeOfDay.now(),
